@@ -1,0 +1,5 @@
+THIS IS A SOURCE PROJECT, NOT A READY-TO-INSTALL .GEODE FILE.
+
+A .geode package contains a compiled platform-specific mod binary. This project
+must be built with the matching Geode SDK and Windows C++ toolchain first.
+See README.md for exact requirements and commands.

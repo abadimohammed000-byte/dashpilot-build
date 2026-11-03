@@ -1,0 +1,28 @@
+name: Build DashPilot AI
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-windows:
+    name: Build Windows x64 Geode mod
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Build Geode mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: given
+          build-config: Release
+          path: ./
+      - name: Upload .geode artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashpilot-geode-win64
+          path: ${{ steps.build.outputs.build-output }}/*.geode
+          if-no-files-found: error
+          retention-days: 7

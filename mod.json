@@ -1,0 +1,65 @@
+{
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "moe.dashpilot-ai",
+  "name": "DashPilot AI",
+  "version": "v0.1.0",
+  "developer": "DashPilot",
+  "description": "A local, game-aware Geometry Dash autopilot with an in-game control panel and adaptive retry memory.",
+  "settings": {
+    "general-title": {
+      "type": "title",
+      "name": "autopilot"
+    },
+    "strength": {
+      "type": "float",
+      "name": "Strength",
+      "description": "How early the controller reacts. Higher values increase its look-ahead window and control commitment.",
+      "default": 0.65,
+      "min": 0.1,
+      "max": 1.0,
+      "control": {
+        "slider": true,
+        "input": true,
+        "slider-step": 0.05
+      }
+    },
+    "auto-start-on-level": {
+      "type": "bool",
+      "name": "Auto-start on level entry",
+      "description": "Arm the bot automatically whenever a playable level opens.",
+      "default": false
+    },
+    "auto-retry": {
+      "type": "bool",
+      "name": "Retry after death",
+      "description": "Automatically restart after a short death-animation delay.",
+      "default": false
+    },
+    "debug-overlay": {
+      "type": "bool",
+      "name": "Debug overlay",
+      "description": "Show the live decision, next hazard distance, mode, and compact object grid in the in-game panel.",
+      "default": true
+    },
+    "keybind-title": {
+      "type": "title",
+      "name": "keybinds"
+    },
+    "toggle-bot": {
+      "type": "keybind",
+      "name": "Arm / toggle autopilot",
+      "description": "Can be pressed in the menu to arm the bot for the next level, or during gameplay to take control immediately.",
+      "default": "F6",
+      "category": "universal"
+    },
+    "toggle-panel": {
+      "type": "keybind",
+      "name": "Open / close in-game panel",
+      "default": "F7",
+      "category": "universal"
+    }
+  }
+}
